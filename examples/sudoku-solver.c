@@ -35,7 +35,7 @@ void usage(char *program_name) {
 }
 
 void print_sol(dlx_t *d) {
-   int board[81];
+   int board[81] = {0};
    int min, val;
    node_t *rmin, *row;
    sol_t *cur;
