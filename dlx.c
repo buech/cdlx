@@ -145,12 +145,13 @@ static node_t *pop(sol_t **s) {
    return row;
 }
 
-void solve(dlx_t *d, void (*cb)(dlx_t *d)) {
+void solve(dlx_t *d, void (*cb)(dlx_t *)) {
    node_t *h = d->h;
 
    if (h->r == h) {
       d->nsol++;
-      cb(d);
+      if (cb)
+         cb(d);
       return;
    }
 
