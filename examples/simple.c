@@ -47,7 +47,7 @@ int main() {
                0     3
 
       Note that the elements are not in order. The Sudoku solver gives an
-      example of how to order the elements to extract the solution in that case.
+      example of how to sort the elements to extract the solution in that case.
    */
    puts("Solution:");
    solve(d, print_solution);
