@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <limits.h>
+#include <stdint.h>
 
 #include "dlx.h"
 
@@ -112,7 +112,7 @@ static void uncover(node_t *c) {
 }
 
 static node_t *choose_col(node_t *h) {
-   unsigned long s = ULONG_MAX;
+   size_t s = SIZE_MAX;
    node_t *c = h->r;
 
    for (node_t *j = h->r; j != h; j = j->r) {
