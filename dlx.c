@@ -19,12 +19,12 @@ static void insert_above(node_t *cur, node_t *new) {
 }
 
 dlx_t *new_dlx(size_t ncols) {
-   dlx_t *d = (dlx_t*) malloc(sizeof(dlx_t));
+   dlx_t *d = malloc(sizeof(dlx_t));
    d->size = ncols;
    d->s = NULL;
    d->nsol = 0;
 
-   node_t *root = (node_t*) malloc(sizeof(node_t));
+   node_t *root = malloc(sizeof(node_t));
    root->l = root;
    root->r = root;
    root->u = NULL;
@@ -35,7 +35,7 @@ dlx_t *new_dlx(size_t ncols) {
 
    node_t *cur = root;
    for (size_t i = 0; i < ncols; ++i, cur = cur->r) {
-      node_t *new = (node_t*) malloc(sizeof(node_t));
+      node_t *new = malloc(sizeof(node_t));
       insert_right(cur, new);
       new->u = new;
       new->d = new;
@@ -72,7 +72,7 @@ void add_row(dlx_t *d, size_t len, int *row) {
    node_t *prev = NULL;
    for (size_t i = 0; i < len; ++i, cur = cur->r) {
       if (row[i]) {
-         node_t *new = (node_t*) malloc(sizeof(node_t));
+         node_t *new = malloc(sizeof(node_t));
          new->c = cur;
          insert_above(cur, new);
          if (!prev) {
@@ -126,7 +126,7 @@ static node_t *choose_col(node_t *h) {
 }
 
 static void push(sol_t **s, node_t *row) {
-   sol_t *new = (sol_t*) malloc(sizeof(sol_t));
+   sol_t *new = malloc(sizeof(sol_t));
 
    new->row = row;
    new->next = *s;
