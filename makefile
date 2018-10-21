@@ -1,6 +1,5 @@
 CFLAGS ?= -O3 -march=native
-CFLAGS += -std=c99 -pedantic -Wall
-LDFLAGS = -L. -lcdlx
+CFLAGS += -std=c99 -Wall -Wextra -pedantic
 
 vpath %.c examples
 
