@@ -1,6 +1,7 @@
 CFLAGS ?= -O3 -march=native
 CFLAGS += -std=c99 -Wall -Wextra -pedantic
-LDFLAGS = -L. -lcdlx
+LDFLAGS = -L.
+LDLIBS = -lcdlx
 
 vpath %.c examples
 
@@ -22,11 +23,8 @@ examples: $(EXMPLS)
 $(LIB): $(OBJ)
 	ar crus $@ $?
 
-simple: simple.c $(LIB) $(HDR)
-	$(CC) $(CFLAGS) -I. $< -o $@ $(LDFLAGS)
-
-sudoku-solver: sudoku-solver.c $(LIB) $(HDR)
-	$(CC) $(CFLAGS) -I. $< -o $@ $(LDFLAGS)
+$(EXMPLS): % : %.c $(LIB) $(HDR)
+	$(CC) $(CFLAGS) $(LDFLAGS) -I. $< -o $@ $(LDLIBS)
 
 clean:
 	rm -f $(LIB) *.o $(EXMPLS)
