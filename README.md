@@ -27,7 +27,6 @@ Create a new DLX object with `new_dlx`, add constraint rows to it with `add_row`
 and solve for all possible solutions with `solve`. See `examples/` for
 examples:
 - `simple.c`: the simple 6x7 matrix example from Knuth's paper
-- `sudoku-solver.c`: solver for 9x9 Sudokus
 
 ## Documentation
 ### Functions

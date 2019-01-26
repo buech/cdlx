@@ -9,7 +9,7 @@ SRC = dlx.c print_solution.c
 OBJ := $(SRC:.c=.o)
 HDR = dlx.h
 LIB = libcdlx.a
-EXMPLS = simple sudoku-solver
+EXMPLS = simple
 
 all: lib examples
 
