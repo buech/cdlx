@@ -1,4 +1,4 @@
-CFLAGS ?= -O3 -march=native
+CFLAGS ?= -O3
 CFLAGS += -std=c99 -Wall -Wextra -pedantic
 LDFLAGS = -L.
 LDLIBS = -lcdlx
