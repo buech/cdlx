@@ -26,7 +26,7 @@ struct dlx_t {
 dlx_t *new_dlx(size_t);
 void free_dlx(dlx_t *);
 void add_row(dlx_t *, size_t, int *);
-void solve(dlx_t *, void (*cb)(dlx_t *));
+void solve(dlx_t *, void (*)(dlx_t *));
 void print_solution(dlx_t *);
 
 #endif
