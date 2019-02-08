@@ -1,6 +1,8 @@
 #ifndef DLX_H
 #define DLX_H
 
+#include <stdlib.h>
+
 typedef struct node_t node_t;
 typedef struct sol_t sol_t;
 typedef struct dlx_t dlx_t;
