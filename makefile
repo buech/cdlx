@@ -1,5 +1,4 @@
-CFLAGS ?= -O3
-CFLAGS += -std=c99 -Wall -Wextra -pedantic
+CFLAGS = -std=c99 -O3 -Wall -Wextra -pedantic
 LDFLAGS = -L.
 LDLIBS = -lcdlx
 
